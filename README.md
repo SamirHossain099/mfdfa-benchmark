@@ -1,5 +1,7 @@
 # Cross-implementation benchmark of fractal and multifractal EEG measures
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22547573.svg)](https://doi.org/10.5281/zenodo.22547573)
+
 Do the DFA and MFDFA numbers in the EEG literature depend on which software
 package produced them?
 
@@ -338,3 +340,14 @@ conclusion.
 A write-up of these results is in preparation. It is kept outside this
 repository, which holds the code, the derived tables and the figures, so that
 the analysis can be rerun independently of the text.
+
+## Citing this
+
+Every release is archived on Zenodo. Cite the version you actually ran, not the
+repository, so the numbers can be traced to the code that produced them.
+
+    Hossain, S. (2026). SamirHossain099/mfdfa-benchmark: First Release (v1.0.0).
+    Zenodo. https://doi.org/10.5281/zenodo.22547574
+
+`10.5281/zenodo.22547573` is the concept DOI and always resolves to the latest
+version; `10.5281/zenodo.22547574` pins v1.0.0.
