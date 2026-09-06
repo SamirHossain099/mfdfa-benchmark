@@ -352,8 +352,9 @@ the analysis can be rerun independently of the text.
 Every release is archived on Zenodo. Cite the version you actually ran, not the
 repository, so the numbers can be traced to the code that produced them.
 
-    Hossain, S. (2026). SamirHossain099/mfdfa-benchmark: First Release (v1.0.0).
-    Zenodo. https://doi.org/10.5281/zenodo.22547574
+    Hossain, S. (2026). SamirHossain099/mfdfa-benchmark: v1.1.0.
+    Zenodo. https://doi.org/10.5281/zenodo.22549495
 
 `10.5281/zenodo.22547573` is the concept DOI and always resolves to the latest
-version; `10.5281/zenodo.22547574` pins v1.0.0.
+version; `10.5281/zenodo.22549495` pins v1.1.0, which is the release the
+manuscript cites.
