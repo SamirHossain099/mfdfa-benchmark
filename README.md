@@ -237,7 +237,8 @@ run_discard.py        driver for the above, writes results/discard*.csv
 results/              hq_long.csv, summary.csv, invariance.csv, prevalence.csv,
                       discard.csv
 figures/              fig1 agreement, fig2 h(q) curves, fig3 invariance,
-                      fig4 prevalence, fig5 cross-corpus
+                      fig4 prevalence, fig5 cross-corpus; each written twice,
+                      as a 600 dpi PNG and as a vector PDF for publishers
 tests/                harness tests, synthetic only, no network
 ```
 

@@ -34,11 +34,18 @@ COLORS = {
 }
 
 
-def _save(fig, name):
+def _save(fig, name, dpi=600):
+    """Write the figure twice: a raster at print resolution and a vector copy.
+
+    These are line plots, so the PDF is the version to send a publisher; it has no resolution to
+    be wrong. The PNG exists because Markdown and Word embed it, and it is written at 600 dpi
+    because journals commonly require 600 to 1200 for line art and reject 150.
+    """
     FIGURES.mkdir(parents=True, exist_ok=True)
     path = FIGURES / name
     fig.tight_layout()
-    fig.savefig(path, dpi=150)
+    fig.savefig(path, dpi=dpi)
+    fig.savefig(path.with_suffix(".pdf"))
     plt.close(fig)
     return path
 
