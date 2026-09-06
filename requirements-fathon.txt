@@ -1,0 +1,4 @@
+# fathon is compiled against the NumPy 1.x ABI and cannot import under NumPy 2.
+# Install these in a SEPARATE virtualenv and point FATHON_PYTHON at its interpreter.
+numpy<2
+fathon==1.3.3.post1

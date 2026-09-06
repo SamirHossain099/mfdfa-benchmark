@@ -1,0 +1,18 @@
+__pycache__/
+*.py[cod]
+.venv*/
+.ipynb_checkpoints/
+.pytest_cache/
+node_modules/
+
+# Manuscript and its build toolchain. The write-up lives outside this
+# repository; this repository holds the code, tables and figures so the
+# analysis can be rerun on its own.
+MANUSCRIPT.md
+MANUSCRIPT.docx
+PAPER_OUTLINE.md
+references.bib
+references.ris
+package.json
+package-lock.json
+src/

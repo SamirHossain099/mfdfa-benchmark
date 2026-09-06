@@ -1,0 +1,33 @@
+{
+  "versions": {
+    "python": "3.12.10",
+    "numpy": "2.4.6",
+    "scipy": "1.18.0",
+    "MFDFA": "0.4.3",
+    "neurokit2": "0.2.13",
+    "nolds": "unknown",
+    "fdnkit": "1.1.0",
+    "fathon_python": "C:\\Users\\samir\\AppData\\Local\\Temp\\fathonenv\\Scripts\\python.exe"
+  },
+  "scales": [
+    16,
+    24,
+    32,
+    48,
+    64,
+    96,
+    128,
+    192,
+    256
+  ],
+  "q": [
+    -5.0,
+    -3.0,
+    -2.0,
+    -1.0,
+    1.0,
+    2.0,
+    3.0,
+    5.0
+  ]
+}

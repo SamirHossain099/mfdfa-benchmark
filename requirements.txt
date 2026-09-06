@@ -1,0 +1,9 @@
+numpy>=2
+scipy
+pandas
+matplotlib
+mne
+fdnkit>=1.1.0
+MFDFA==0.4.3
+neurokit2==0.2.13
+nolds

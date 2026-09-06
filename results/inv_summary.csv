@@ -1,0 +1,7 @@
+signal,package,delta_h,h_q2,max_abs_err_vs_truth,seconds,error
+eegbci_s1_r4_Fc5,MFDFA,18.38786529336811,1.134897635248809,,0.007,
+eegbci_s1_r4_Fc5,neurokit2,0.4787928517611819,0.8252612956410458,,0.031,
+eegbci_s1_r4_Fc5,fdnkit,2.494740388035348,1.1315681322460975,,0.085,
+eegbci_s1_r4_Fc5,fdnkit_unguarded,11.597840467142223,1.1315681327165907,,0.09,
+eegbci_s1_r4_Fc5,nolds,,,,0.141,
+eegbci_s1_r4_Fc5,fathon,14.644025068010968,1.1315681327180263,,0.233,
