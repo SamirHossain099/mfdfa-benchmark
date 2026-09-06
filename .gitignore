@@ -14,6 +14,9 @@ PAPER_OUTLINE.md
 references.bib
 references.ris
 references_missing.ris
+# Cover letter, reviewer suggestions and the submission checklist. These name people and
+# state editorial preferences; they are correspondence with an editor, not public artifacts.
+submission/
 package.json
 package-lock.json
 src/
