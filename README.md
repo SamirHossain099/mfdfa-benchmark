@@ -231,7 +231,11 @@ benchmark/
   run_benchmark.py    driver, writes tidy CSVs to results/
   prevalence.py       cohort run; relates delta_h to flat-run content
   figures.py          builds the PNGs in figures/ from the CSVs
-results/              hq_long.csv, summary.csv, invariance.csv, prevalence.csv
+  discard.py          counts the segments neurokit2's absolute threshold removes,
+                      measured from inside the package rather than reimplemented
+run_discard.py        driver for the above, writes results/discard*.csv
+results/              hq_long.csv, summary.csv, invariance.csv, prevalence.csv,
+                      discard.csv
 figures/              fig1 agreement, fig2 h(q) curves, fig3 invariance,
                       fig4 prevalence, fig5 cross-corpus
 tests/                harness tests, synthetic only, no network
@@ -265,6 +269,7 @@ python -m benchmark.run_benchmark --synthetic-only
 python -m benchmark.run_benchmark --subjects 1 2 3 --channels 8
 python -m benchmark.run_benchmark --packages MFDFA neurokit2 fdnkit
 python -m benchmark.run_benchmark --real-only --invariance   # scale-invariance test
+python run_discard.py                                       # segment-discard measurement
 ```
 
 EEG is fetched through MNE from PhysioNet on first use and cached. No
