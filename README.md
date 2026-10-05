@@ -39,8 +39,8 @@ Measured against analytic truth, where it exists:
 
 Reading of these numbers:
 
-1. **On clean signals the implementations agree**, and all land within about
-   0.13 of the analytic answer. The comparison is therefore fair: differences
+1. **On clean signals the implementations agree**, and all land within
+   0.125 of the analytic answer. The comparison is therefore fair: differences
    later are not artifacts of mismatched conventions or grids.
 2. **A single 32-sample constant run in a 20,000-sample series**, 0.16% of the
    data, moves most implementations by up to 9.9 in `h(q)` against a known
@@ -52,8 +52,8 @@ Reading of these numbers:
    multifractal width for the signal. A reader of the literature cannot tell
    which tool produced a published number.
 
-These are pilot results on one subject. Prevalence across subjects and corpora
-is the obvious next step.
+These are single-channel numbers. The cohort, the second corpus and the
+invariance test follow below.
 
 ## Second result: scale invariance
 
@@ -236,10 +236,14 @@ benchmark/
 run_discard.py        driver for the above, writes results/discard*.csv
 results/              hq_long.csv, summary.csv, invariance.csv, prevalence.csv,
                       discard.csv
-figures/              fig1 agreement, fig2 h(q) curves, fig3 invariance,
-                      fig4 prevalence, fig5 cross-corpus; each written twice,
-                      as a 600 dpi PNG and as a vector PDF for publishers
-tests/                harness tests, synthetic only, no network
+figures/              fig1 agreement, fig2 h(q) curves, fig3 prevalence,
+                      fig4 invariance, fig5 cross-corpus, numbered in the order
+                      the manuscript cites them; drawn at printed width with
+                      lettered panels, each written twice, as a 600 dpi PNG and
+                      as a vector PDF for publishers
+tests/                harness tests (synthetic only, no network), and
+                      test_paper_numbers.py, which recomputes every number in
+                      the manuscript from results/
 ```
 
 `results/environment.json` records package versions and the parameter grid, so
@@ -282,7 +286,7 @@ registration or data agreement is required.
 python -m pytest tests/ -q
 ```
 
-13 tests covering the harness itself, since a reproducibility study is only as
+13 tests cover the harness itself, since a reproducibility study is only as
 trustworthy as its measuring instrument. They use synthetic signals only and do
 not touch the network. Two of them encode the study's central claims directly:
 `test_adapters_agree_on_a_clean_monofractal_signal` asserts the implementations
@@ -291,6 +295,11 @@ the later divergence meaningful; and
 `test_relative_floor_is_scale_invariant_but_absolute_is_not` asserts that a
 relative floor survives rescaling while a machine-epsilon absolute floor does
 not.
+
+`tests/test_paper_numbers.py` recomputes every number reported in the manuscript
+from the tables in `results/` and checks that the manuscript prints it. The
+manuscript is not in this repository, so those tests skip here; they document
+where each reported number comes from.
 
 ## Method notes
 
@@ -318,7 +327,13 @@ Both defects were reported to their maintainers before any write-up:
   units and fail outright on low-amplitude data.
 
 Both reports include a self-contained reproducer and suggest fixes in
-increasing order of intrusiveness.
+increasing order of intrusiveness. Issue 1208 has since been reproduced
+independently by another contributor, who opened
+[neuropsychology/NeuroKit#1209](https://github.com/neuropsychology/NeuroKit/pull/1209):
+it makes the threshold relative to the largest segment variance and adds a
+scale-invariance regression test. As of 2026-10-04 that pull request is under
+review and `neurokit2` 0.2.13, the latest release, still applies the absolute
+threshold. Issue 38 has had no response.
 
 ## Background
 
@@ -331,9 +346,9 @@ implementation choices drive the difference.
 
 ## Status
 
-Pilot results across 10 subjects (80 channels) and five implementations, with
-synthetic controls carrying analytic ground truth. Enough to establish the
-effect, its mechanism, and its prevalence in one corpus.
+Results across 10 subjects (80 channels) and five implementations, with
+synthetic controls carrying analytic ground truth, establish the effect, its
+mechanism and its prevalence in one corpus.
 
 The second corpus is done, and it separated the two findings: the amplitude
 dependence replicated and intensified, the constant-run prevalence did not.
@@ -343,7 +358,8 @@ a third corpus is worth adding to bound how much flat-run prevalence varies
 between datasets, and whether the affected channels change any downstream
 conclusion.
 
-A write-up of these results is in preparation. It is kept outside this
+A preprint of an earlier version of the write-up is at SSRN,
+https://doi.org/10.2139/ssrn.7434452. The text is kept outside this
 repository, which holds the code, the derived tables and the figures, so that
 the analysis can be rerun independently of the text.
 
@@ -352,9 +368,9 @@ the analysis can be rerun independently of the text.
 Every release is archived on Zenodo. Cite the version you actually ran, not the
 repository, so the numbers can be traced to the code that produced them.
 
-    Hossain, S. (2026). SamirHossain099/mfdfa-benchmark: v1.1.0.
-    Zenodo. https://doi.org/10.5281/zenodo.22549495
+    Hossain, S. (2026). SamirHossain099/mfdfa-benchmark. Zenodo.
+    https://doi.org/10.5281/zenodo.22547573
 
 `10.5281/zenodo.22547573` is the concept DOI and always resolves to the latest
-version; `10.5281/zenodo.22549495` pins v1.1.0, which is the release the
-manuscript cites.
+version. Each release has its own version DOI on the Zenodo record; cite that
+one to pin the exact code. `CITATION.cff` carries the same information.

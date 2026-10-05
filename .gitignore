@@ -20,3 +20,6 @@ submission/
 package.json
 package-lock.json
 src/
+# Frozen copies of each submitted manuscript.
+MANUSCRIPT.*.md
+MANUSCRIPT.*.docx

@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this benchmark, please cite it as below."
+title: "mfdfa-benchmark: a cross-implementation benchmark of DFA and MFDFA on EEG"
+type: software
+authors:
+  - given-names: Samir
+    family-names: Hossain
+    orcid: "https://orcid.org/0009-0003-8986-0946"
+    affiliation: "Department of Electrical and Computer Engineering, Texas Tech University"
+version: 1.2.0
+date-released: 2026-10-04
+license: MIT
+repository-code: "https://github.com/SamirHossain099/mfdfa-benchmark"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.22547573
+    description: "Concept DOI; resolves to the latest release"
+keywords:
+  - detrended fluctuation analysis
+  - multifractal analysis
+  - EEG
+  - software reliability
+  - reproducibility
+  - scale invariance
+abstract: >-
+  Runs five open Python implementations of detrended fluctuation analysis and its
+  multifractal extension over identical signals with one parameter grid: synthetic
+  controls with analytically known exponents, controls carrying inserted constant runs,
+  and two public EEG corpora. Includes an invariance test under rescaling of the input,
+  a measurement of the segments discarded by an absolute variance threshold, the result
+  tables behind every reported number, and the figure scripts.
